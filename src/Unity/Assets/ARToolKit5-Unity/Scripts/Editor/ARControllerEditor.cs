@@ -111,6 +111,13 @@ public class ARControllerEditor : Editor
 			if (newContentMode != currentContentMode) {
 				arcontroller.ContentMode = newContentMode;
 			}
+			
+			ContentAlign currentContentAlign = arcontroller.ContentAlign;
+			ContentAlign newContentAlign = (ContentAlign)EditorGUILayout.EnumPopup("Content align", currentContentAlign);
+			if (newContentAlign != currentContentAlign) {
+				arcontroller.ContentAlign = newContentAlign;
+			}
+			
 			arcontroller.ContentRotate90 = EditorGUILayout.Toggle("Rotate 90 deg.", arcontroller.ContentRotate90);
 			arcontroller.ContentFlipV = EditorGUILayout.Toggle("Flip vertically", arcontroller.ContentFlipV);
 			arcontroller.ContentFlipH = EditorGUILayout.Toggle("Flip horizontally.", arcontroller.ContentFlipH);
